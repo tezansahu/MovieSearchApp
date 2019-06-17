@@ -1,5 +1,7 @@
 {
-  "name": "air-pollution-tut",
-  "integrations": {},
+  "name": "movie-tut",
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }
