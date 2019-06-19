@@ -22,7 +22,7 @@
   <ion-list>
     <ion-item-sliding *ngFor="let item of (results|async)">
       <ion-item-options side="start">
-        <ion-item-option color="primary" (click)="favorite(item)">
+        <ion-item-option color="primary" (click)="addFavorite(item)">
           <ion-icon name="bookmark"></ion-icon>
           Favorite
         </ion-item-option>
