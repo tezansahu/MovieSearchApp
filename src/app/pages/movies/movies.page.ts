@@ -21,9 +21,12 @@ export class MoviesPage implements OnInit {
 
   ngOnInit() {
     this.storage.get("favorites").then(data => {
-      this.favorites = data;
-      console.log(data);
+      if(data != undefined){
+        this.favorites = data;
+        console.log(data);
+      }
     })
+    console.log(this.favorites.findIndex((favMovie) => favMovie.Title == "ABCD"));
   }
 
   async searchChanged() {
@@ -35,6 +38,7 @@ export class MoviesPage implements OnInit {
   }
 
   addFavorite(movie: any){
+    console.log(movie)
     if(this.favorites.findIndex((favMovie) => favMovie.imdbID == movie.imdbID) == -1){
       this.favorites.push(movie)
       this.storage.set("favorites", this.favorites).then((successData) => {
